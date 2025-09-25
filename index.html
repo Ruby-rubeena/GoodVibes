@@ -1,507 +1,403 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Good Vibes - Teens by Teens Mental Wellness</title>
-
-<!-- Favicon: inline base64 SVG -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDQwMCAxMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJHb29kIFZpYmVzIGxvZ28iPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmIzMDAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmNhMjgiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48Y2lyY2xlIGN4PSI2MCIgY3k9IjYwIiByPSI0MCIgZmlsbD0idXJsKCNncmFkKSIgLz48ZyBzdHJva2U9IiNmZmNhMjgiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KbGluZSB4MT0iNjAiIHkxPSIxMCIgeDI9IjYwIiB5Mj0iMCIgLz4KbGluZSB4MT0iNjAiIHkxPSIxMTAiIHgyPSI2MCIgeTI9IjEyMCIgLz4KbGluZSB4MT0iMTAiIHkxPSI2MCIgeDI9IjAiIHkyPSI2MCIgLz4KbGluZSB4MT0iMTEwIiB5MT0iNjAiIHgyPSIxMjAiIHkyPSI2MCIgLz4KbGluZSB4MT0iMjUiIHkxPSIyNSIgeDI9IjE1IiB5Mj0iMTUiIC8+CmxpbmUgeDE9Ijk1IiB5MT0iOTUiIHgyPSIxMDUiIHkyPSIxMDUiIC8+CmxpbmUgeDE9IjI1IiB5MT0iOTUiIHgyPSIxNSIgeTI9IjEwNSIgLz4KbGluZSB4MT0iOTUiIHkxPSIyNSIgeDI9IjEwNSIgeTI9IjE1IiAvPgo8L2c+CiAgPGNpcmNsZSBjeD0iNDUiIGN5PSI1NSIgcj0iNSIgZmlsbD0iIzVkNDAzNyIvPgogIDxwYXRoIGQ9Ik0gNDAgNzUgUSA2MCA5MCA4MCA3NSIgc3Ryb2tlPSIjNWQ0MDM3IiBzdHJva2Utd2lkdGg9IjUiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz4KICA8dGV4dCB4PSIxNDAiIHk9Ijc1IiBmb250LWZhbWlseT0iUGFjaWZpbywgY3Vyc2l2ZSIgZm9udC1zaXplPSI2MCIgZmlsbD0idXJsKCNncmFkKSIgZmlsdGVyPSJkcm9wLXNob3FkKDIycHggMnB4IDIycHggI2Q2YzQxKSI+R29vZCBWaWJlczwvdGV4dD4KPC9zdmc+" />
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Resilience Builder</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+  :root {
+    --bg:#fbfbfb;
+    --card:#ffffff;
+    --muted:#6b7280;
+    --accent:#2b6cb0;
+    --accent-2:#2b8a6f;
+    --accent-3:#f59e0b;
+    --shadow: 0 6px 20px rgba(16,24,40,0.06);
+    --radius:12px;
+    --max:900px;
+  }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a202c;
+      --card: #2d3748;
+      --muted: #a0aec0;
+      --accent: #63b3ed;
+      --accent-2: #68d391;
+      --accent-3: #f6ad55;
+    }
+    body {
+      background: linear-gradient(180deg, #2d3748, var(--bg));
+      color: #edf2f7;
+    }
+  }
+
+  * { box-sizing: border-box }
+  html, body { height: 100% }
   body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #fff8e1, #ffecb3);
-    color: #5d4037;
-  }
-
-  nav {
-    background-color: #ffb300;
-    padding: 1rem 1.5rem;
+    background: linear-gradient(180deg,#f7fafc, var(--bg));
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 28px;
     display: flex;
-    gap: 2rem;
+    align-items: flex-start;
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
 
-  nav a {
-    color: #5d4037;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+  .app {
+    width: 100%;
+    max-width: var(--max);
+    background: var(--card);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(15,23,42,0.04);
   }
 
-  nav a:hover,
-  nav a.active {
-    color: #ff6f00;
-    text-shadow: 0 0 5px #ff6f00;
+  header {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 18px;
   }
 
-  .container {
-    max-width: 960px;
-    margin: 2rem auto 4rem;
-    padding: 0 1rem;
+  .brand {
+    display: flex;
+    gap: 14px;
+    align-items: center;
   }
 
-  h1, h2 {
-    font-family: 'Pacifico', cursive;
-    color: #ffb300;
-    text-shadow: 1px 1px 2px #6d4c41;
-  }
-
-  h1 {
+  .crest {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(180deg, #fff,#f2f6ff);
+    border-radius: 10px;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-size: 3rem;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(43,108,176,0.06);
+    border: 1px solid rgba(43,108,176,0.06);
   }
 
-  h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-  }
-
-  /* Logo SVG in header */
-  #header-logo {
-    width: 80px;
-    height: 80px;
-    flex-shrink: 0;
-  }
-
-  /* Affirmations */
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  li {
-    background: #ffecb3;
-    margin: 0.4rem 0;
-    padding: 0.6rem 1rem;
-    border-radius: 12px;
-    box-shadow: 1px 1px 5px rgba(255 179 0 / 0.3);
-    font-size: 1.1rem;
-  }
-
-  /* Mood Music & Quotes */
-  #mood-select {
-    padding: 0.5rem 1rem;
-    border-radius: 12px;
-    border: 2px solid #ffb300;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    background: #fff8e1;
-    color: #5d4037;
-  }
-
-  #quote-section {
-    font-style: italic;
-    font-weight: 600;
-    padding-bottom: 1.5rem;
-    font-size: 0.95rem;
-    color: #bf360c;
-  }
-
-  #music-links a {
-    display: inline-block;
-    margin-right: 1rem;
-    margin-bottom: 0.8rem;
-    color: #ff6f00;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  #music-links a:hover {
-    text-decoration: underline;
-  }
-
-  /* Diary */
-  textarea {
-    width: 100%;
-    font-family: inherit;
-    font-size: 1rem;
-    padding: 0.8rem 1rem;
-    border-radius: 12px;
-    border: 2px solid #ffb300;
-    resize: vertical;
-    background: #fff8e1;
-    color: #5d4037;
-  }
-
-  button {
-    background-color: #ffb300;
-    border: none;
-    padding: 0.7rem 1.6rem;
-    border-radius: 12px;
-    color: #5d4037;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 1rem;
-    box-shadow: 1px 1px 6px #ffca28;
-    transition: background-color 0.3s ease;
-  }
-
-  button:hover {
-    background-color: #ffca28;
-  }
-
-  .entry {
-    margin-top: 1rem;
-    background: #ffecb3;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 1px 1px 8px rgba(255 179 0 / 0.3);
-    font-size: 1rem;
-    color: #5d4037;
-  }
-
-  .entry-date {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #bf360c;
-    margin-bottom: 0.4rem;
-  }
-
-  /* Chatbot */
-  #chat-log {
-    max-height: 280px;
-    overflow-y: auto;
-    background: #fff8e1;
-    border: 2px solid #ffb300;
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    color: #5d4037;
-    font-size: 0.9rem;
-  }
-
-  .chat-message {
-    margin-bottom: 0.7rem;
-    padding: 0.4rem 0.8rem;
-    border-radius: 12px;
-    max-width: 75%;
-    word-wrap: break-word;
-  }
-
-  .chat-message.user {
-    background-color: #ffca28;
-    color: #5d4037;
-    align-self: flex-end;
+  .crest img { max-width: 56px; max-height: 56px; display: block; }
+  h1 { font-size: 20px; margin: 0; letter-spacing: 0.6px; }
+  .subtitle { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .header-right {
     margin-left: auto;
+    text-align: right;
+    font-size: 13px;
+    color: var(--muted);
   }
 
-  .chat-message.bot {
-    background-color: #ffecb3;
-    color: #5d4037;
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 22px;
   }
 
-  #chat-input {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    font-size: 1rem;
+  @media (max-width:880px) {
+    .grid { grid-template-columns: 1fr; padding-bottom: 6px; }
+    .header-right { display: none; }
+  }
+
+  section.card {
+    background: linear-gradient(180deg,#fff,#ffffff);
+    padding: 18px;
     border-radius: 12px;
-    border: 2px solid #ffb300;
-    background: #fff8e1;
-    color: #5d4037;
+    border: 1px solid rgba(15,23,42,0.03);
+    box-shadow: 0 6px 18px rgba(8,15,30,0.02);
   }
 
-  #send-btn {
-    margin-top: 0.5rem;
-    width: 100%;
+  .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
   }
 
-  /* Footer */
-  hr.separator {
-    border: none;
-    border-top: 1px solid #ffb300;
-    margin: 2rem 0 1rem 0;
+  .section-title h2 { margin: 0; font-size: 16px; }
+  .tag {
+    background: rgba(43,108,176,0.12);
+    color: var(--accent);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+  }
+
+  details {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid rgba(15,23,42,0.03);
+    background: linear-gradient(180deg,#fff,#fbfcff);
+  }
+
+  summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  summary::-webkit-details-marker { display: none }
+  details[open] summary { color: var(--accent) }
+  details p {
+    margin: 10px 0 0 0;
+    color: var(--muted);
+    line-height: 1.45;
+    font-size: 14px;
+  }
+
+  .tips {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .tip {
+    background: linear-gradient(180deg,#fff,#fcfffb);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(15,23,42,0.03);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .tasks-list { display: grid; gap: 8px; margin-top: 8px; }
+
+  .task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: linear-gradient(180deg,#fff,#ffffff);
+    border: 1px solid rgba(15,23,42,0.03);
+  }
+
+  .task label { flex: 1; cursor: pointer }
+  .task small { color: var(--muted); font-size: 12px }
+
+  input[type="checkbox"] {
+    width: 20px; height: 20px;
+    accent-color: var(--accent);
+    flex: 0 0 20px;
+  }
+
+  .progress-wrap { margin-top: 14px; }
+  .progress {
+    height: 18px;
+    background: linear-gradient(180deg,#f1f5f9,#f8fafc);
+    border-radius: 12px;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid rgba(15,23,42,0.04);
+  }
+
+  .seg {
+    flex: 0 0 0;
+    transition: flex 280ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
+    font-weight: 600;
+  }
+
+  .seg.one { background: linear-gradient(180deg,var(--accent), #235b8a) }
+  .seg.two { background: linear-gradient(180deg,var(--accent-2), #15664c) }
+  .seg.three { background: linear-gradient(180deg,var(--accent-3), #b56b06) }
+  .seg.four { background: linear-gradient(180deg,#9f7aea,#7c3aed) }
+  .seg.five { background: linear-gradient(180deg,#ef4444,#b91c1c) }
+  .seg.six { background: linear-gradient(180deg,#06b6d4,#0e7490) }
+
+  #t1:checked ~ .progress .seg.one { flex: 1 1 1; }
+  #t2:checked ~ .progress .seg.two { flex: 1 1 1; }
+  #t3:checked ~ .progress .seg.three { flex: 1 1 1; }
+  #t4:checked ~ .progress .seg.four { flex: 1 1 1; }
+  #t5:checked ~ .progress .seg.five { flex: 1 1 1; }
+  #t6:checked ~ .progress .seg.six { flex: 1 1 1; }
+
+  .progress .seg span { opacity: 0.95; font-size: 12px }
+
+  aside .card { position: sticky; top: 22px }
+  .stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .stat .big { font-size: 22px; font-weight: 700; color: var(--accent) }
+  .stat small { color: var(--muted) }
+
+  .challenge {
+    border-radius: 10px;
+    padding: 12px;
+    background: linear-gradient(180deg,#fff,#ffffff);
+    border: 1px solid rgba(15,23,42,0.03);
   }
 
   footer {
+    margin-top: 18px;
     text-align: center;
-    font-size: 0.9rem;
-    color: #5d4037;
-    margin-bottom: 1rem;
+    color: var(--muted);
+    font-size: 13px;
   }
 
-  /* Responsive */
-  @media (max-width: 640px) {
-    nav {
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
+  a.link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
 
-    h1 {
-      font-size: 2rem;
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  button#printBtn {
+    margin-top: 16px;
+    background: var(--accent);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 
-    #header-logo {
-      width: 60px;
-      height: 60px;
-    }
+  @media print {
+    button#printBtn { display: none; }
   }
 </style>
 </head>
 <body>
+  <div class="app" role="application" aria-label="Resilience Builder App">
 
-<nav>
-  <a href="#home" class="active">Home</a>
-  <a href="#mood">Mood Music & Quotes</a>
-  <a href="#diary">My Diary</a>
-  <a href="#chatbot">ChatBot</a>
-</nav>
+    <header>
+      <div class="brand">
+        <div class="crest" aria-hidden="true">
+          <img src="data:image/svg+xml;utf8,
+            <svg xmlns='http://www.w3.org/2000/svg' width='56' height='56'>
+              <rect rx='8' width='100%25' height='100%25' fill='%23eaf2ff'/>
+              <text x='50%25' y='57%25' dominant-baseline='middle' text-anchor='middle' font-size='18' fill='%232b6cb0' font-family='Arial'>HB</text>
+            </svg>" alt="college logo">
+        </div>
+        <div>
+          <h1>Bishop Heber College</h1>
+          <div class="subtitle">Department of Computer Science — Resilience Builder</div>
+        </div>
+      </div>
+      <div class="header-right">
+        <div style="font-weight:700">Build resilience • Improve focus</div>
+        <div style="margin-top:6px">Practice daily — 5–10 min</div>
+      </div>
+    </header>
 
-<div class="container" id="home">
-  <h1>
-    <!-- Inline SVG Logo -->
-    <svg id="header-logo" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Good Vibes logo" >
-      <defs>
-        <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#ffb300"/>
-          <stop offset="100%" stop-color="#ffca28"/>
-        </linearGradient>
-      </defs>
-      <circle cx="60" cy="60" r="40" fill="url(#grad)" />
-      <g stroke="#ffca28" stroke-width="4" stroke-linecap="round">
-        <line x1="60" y1="10" x2="60" y2="0" />
-        <line x1="60" y1="110" x2="60" y2="120" />
-        <line x1="10" y1="60" x2="0" y2="60" />
-        <line x1="110" y1="60" x2="120" y2="60" />
-        <line x1="25" y1="25" x2="15" y2="15" />
-        <line x1="95" y1="95" x2="105" y2="105" />
-        <line x1="25" y1="95" x2="15" y2="105" />
-        <line x1="95" y1="25" x2="105" y2="15" />
-      </g>
-      <circle cx="45" cy="55" r="5" fill="#5d4037"/>
-      <circle cx="75" cy="55" r="5" fill="#5d4037"/>
-      <path d="M 40 75 Q 60 90 80 75" stroke="#5d4037" stroke-width="5" fill="none" stroke-linecap="round"/>
-      <text x="140" y="75" font-family="Pacifico, cursive" font-size="60" fill="url(#grad)" filter="drop-shadow(2px 2px 2px #6d4c41)">
-        Good Vibes
-      </text>
-    </svg>
-  </h1>
+    <div class="grid">
+      <main>
+        <section class="card" aria-labelledby="lessonsTitle">
+          <div class="section-title">
+            <h2 id="lessonsTitle">Micro-lessons (read & practice)</h2>
+            <div class="tag">Beginner friendly</div>
+          </div>
+          <details><summary>What is resilience?</summary><p>Resilience is the ability to adapt and bounce back from setbacks.</p></details>
+          <details><summary>Practical strategies</summary><p>Break tasks into small steps, celebrate tiny wins, use positive self-talk...</p></details>
+          <details><summary>Focus & study rituals</summary><p>Short rituals help form resilient habits.</p></details>
+          <div class="tips">
+            <div class="tip"><strong>Small steps:</strong> Choose one tiny goal per session.</div>
+            <div class="tip"><strong>Reflection:</strong> After study, note one improvement.</div>
+            <div class="tip"><strong>Rest:</strong> Short breaks refresh focus.</div>
+            <div class="tip"><strong>Support:</strong> Ask a peer or tutor when stuck.</div>
+          </div>
+        </section>
 
-  <p style="font-style: italic; font-weight: 600; color:#bf360c; font-size: 1.2rem;"> For Teens by Teens Mental Wellness</p>
-  <p>Welcome to Good Vibes! Your friendly space to explore mood music, inspirational quotes, keep a private diary, and chat for personal assistance.</p>
-</div>
+        <section class="card" style="margin-top:16px;">
+          <div class="section-title">
+            <h2>Daily Exercises (check to mark complete)</h2>
+            <div class="tag">Interactive — CSS + JS</div>
+          </div>
 
-<div class="container" id="mood">
-  <h2>Mood Music & Quotes</h2>
-  <label for="mood-select">Select your mood:</label>
-  <select id="mood-select">
-    <option value="">-- Choose Mood --</option>
-    <option value="happy">Happy</option>
-    <option value="sad">Sad</option>
-    <option value="anxious">Anxious</option>
-    <option value="motivated">Motivated</option>
-    <option value="calm">Calm</option>
-  </select>
-  <div id="quote-section"></div>
-  <div id="music-links"></div>
-</div>
+          <div class="tasks-list">
+            <div class="task"><input id="t1" type="checkbox"><label for="t1"><strong>Goal setting</strong></label></div>
+            <div class="task"><input id="t2" type="checkbox"><label for="t2"><strong>Focused study</strong></label></div>
+            <div class="task"><input id="t3" type="checkbox"><label for="t3"><strong>Reflection</strong></label></div>
+            <div class="task"><input id="t4" type="checkbox"><label for="t4"><strong>Breathing reset</strong></label></div>
+            <div class="task"><input id="t5" type="checkbox"><label for="t5"><strong>Stretch break</strong></label></div>
+            <div class="task"><input id="t6" type="checkbox"><label for="t6"><strong>Gratitude note</strong></label></div>
 
-<div class="container" id="diary">
-  <h2>My Diary</h2>
-  <textarea id="diary-text" rows="6" placeholder="Write your personal feelings here..."></textarea>
-  <button id="save-entry">Save Entry</button>
-  <div id="diary-entries"></div>
-</div>
+            <div class="progress-wrap">
+              <div style="display:flex; justify-content:space-between">
+                <small style="color:var(--muted)">Progress</small>
+                <small id="percent" style="font-weight:bold; color:var(--accent)">0%</small>
+              </div>
+              <div class="progress">
+                <div class="seg one"><span></span></div>
+                <div class="seg two"><span></span></div>
+                <div class="seg three"><span></span></div>
+                <div class="seg four"><span></span></div>
+                <div class="seg five"><span></span></div>
+                <div class="seg six"><span></span></div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-<div class="container" id="chatbot">
-  <h2>Personal Assistance ChatBot</h2>
-  <div id="chat-log"></div>
-  <input type="text" id="chat-input" placeholder="Ask me something..." autocomplete="off" />
-  <button id="send-btn">Send</button>
-</div>
+        <section class="card" style="margin-top:16px;">
+          <div class="section-title"><h2>Reflection Journal</h2><div class="tag">Short</div></div>
+          <p style="color:var(--muted); margin:0 0 10px 0">One thing that went well / one thing to improve</p>
+          <textarea id="journal" rows="4" style="width:100%; padding:12px; border-radius:10px;"></textarea>
+          <button id="printBtn" onclick="window.print()">🖨️ Print Progress</button>
+        </section>
+      </main>
 
-<hr class="separator" />
-<footer>
-  &copy; 2025 by Bishop Heber College Student Rubeena.M II BSc Cs
-</footer>
+      <aside>
+        <section class="card">
+          <div class="section-title"><h2>Quick Stats</h2><div class="tag">Motivation</div></div>
+          <div class="stat"><div><small>Streak</small><div class="big">—</div></div><div><small>keep going</small></div></div>
+          <div class="challenge">
+            <h3>Today's Challenge</h3>
+            <p>Type for 3 minutes without distraction.</p>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      <div>Made with ❤️ — Save as <code>.html</code> and open in browser</div>
+    </footer>
+  </div>
 
 <script>
-  // Mood quotes and music data
-  const moodData = {
-    happy: {
-      quotes: [
-        "Happiness is a choice, choose it today!",
-        "Smile, because you deserve to be happy.",
-        "Joy is contagious. Spread it!"
-      ],
-      music: [
-        {title: "Happy - Pharrell Williams", url: "https://www.youtube.com/watch?v=ZbZSe6N_BXs"},
-        {title: "Can't Stop the Feeling - Justin Timberlake", url: "https://www.youtube.com/watch?v=ru0K8uYEZWw"},
-        {title: "Walking on Sunshine - Katrina & The Waves", url: "https://www.youtube.com/watch?v=iPUmE-tne5U"}
-      ]
-    },
-    sad: {
-      quotes: [
-        "It's okay to not be okay.",
-        "After the rain comes the rainbow.",
-        "Feel, heal, and grow."
-      ],
-      music: [
-        {title: "Someone Like You - Adele", url: "https://www.youtube.com/watch?v=hLQl3WQQoQ0"},
-        {title: "Fix You - Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM"},
-        {title: "Let Her Go - Passenger", url: "https://www.youtube.com/watch?v=RBumgq5yVrA"}
-      ]
-    },
-    anxious: {
-      quotes: [
-        "Breathe in calm, breathe out worry.",
-        "You are stronger than your fears.",
-        "This too shall pass."
-      ],
-      music: [
-        {title: "Weightless - Marconi Union", url: "https://www.youtube.com/watch?v=UfcAVejslrU"},
-        {title: "Clair de Lune - Debussy", url: "https://www.youtube.com/watch?v=CvFH_6DNRCY"},
-        {title: "River Flows In You - Yiruma", url: "https://www.youtube.com/watch?v=7maJOI3QMu0"}
-      ]
-    },
-    motivated: {
-      quotes: [
-        "Push yourself, because no one else will.",
-        "Great things never come from comfort zones.",
-        "Dream it. Wish it. Do it."
-      ],
-      music: [
-        {title: "Eye of the Tiger - Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4"},
-        {title: "Stronger - Kanye West", url: "https://www.youtube.com/watch?v=PsO6ZnUZI0g"},
-        {title: "Don't Stop Me Now - Queen", url: "https://www.youtube.com/watch?v=HgzGwKwLmgM"}
-      ]
-    },
-    calm: {
-      quotes: [
-        "Peace begins with a smile.",
-        "Stay grounded, stay calm.",
-        "Let the calm wash over you."
-      ],
-      music: [
-        {title: "Weightless - Marconi Union", url: "https://www.youtube.com/watch?v=UfcAVejslrU"},
-        {title: "Spiegel im Spiegel - Arvo Pärt", url: "https://www.youtube.com/watch?v=TJ6MzvhY6W4"},
-        {title: "Meditation Music", url: "https://www.youtube.com/watch?v=2OEL4P1Rz04"}
-      ]
-    }
-  };
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  const percent = document.getElementById("percent");
+  const journal = document.getElementById("journal");
 
-  // Mood selection logic
-  const moodSelect = document.getElementById('mood-select');
-  const quoteSection = document.getElementById('quote-section');
-  const musicLinks = document.getElementById('music-links');
-
-  moodSelect.addEventListener('change', () => {
-    const mood = moodSelect.value;
-    quoteSection.textContent = '';
-    musicLinks.innerHTML = '';
-    if (!mood || !moodData[mood]) return;
-
-    // Show quotes
-    const quotes = moodData[mood].quotes;
-    if (quotes.length) {
-      quoteSection.innerHTML = `<strong>Quotes to uplift your mood:</strong><ul>${quotes.map(q => `<li>${q}</li>`).join('')}</ul>`;
-    }
-
-    // Show music links
-    const music = moodData[mood].music;
-    if (music.length) {
-      musicLinks.innerHTML = '<strong>Suggested songs:</strong><br>' + music.map(song =>
-        `<a href="${song.url}" target="_blank" rel="noopener noreferrer">${song.title}</a>`
-      ).join('');
-    }
-  });
-
-  // Diary functionality
-  const diaryText = document.getElementById('diary-text');
-  const saveBtn = document.getElementById('save-entry');
-  const diaryEntriesDiv = document.getElementById('diary-entries');
-
-  // Load saved entries from localStorage
-  const savedEntries = JSON.parse(localStorage.getItem('goodVibesDiaryEntries') || '[]');
-  savedEntries.forEach(entry => {
-    addDiaryEntryToDOM(entry.text, entry.date);
-  });
-
-  saveBtn.addEventListener('click', () => {
-    const text = diaryText.value.trim();
-    if (!text) {
-      alert('Please write something before saving your entry.');
-      return;
-    }
-    const date = new Date().toLocaleString();
-    addDiaryEntryToDOM(text, date);
-    savedEntries.push({text, date});
-    localStorage.setItem('goodVibesDiaryEntries', JSON.stringify(savedEntries));
-    diaryText.value = '';
-  });
-
-  function addDiaryEntryToDOM(text, date) {
-    const entryDiv = document.createElement('div');
-    entryDiv.className = 'entry';
-    entryDiv.innerHTML = `<div class="entry-date">${date}</div><div>${text.replace(/\n/g, '<br>')}</div>`;
-    diaryEntriesDiv.prepend(entryDiv);
+  function updateProgress() {
+    const completed = [...checkboxes].filter(cb => cb.checked).length;
+    percent.textContent = `${Math.round((completed / 6) * 100)}%`;
   }
 
-  // Simple AI ChatBot
-  const chatLog = document.getElementById('chat-log');
-  const chatInput = document.getElementById('chat-input');
-  const sendBtn = document.getElementById('send-btn');
-
-  sendBtn.addEventListener('click', sendMessage);
-  chatInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter') sendMessage();
-  });
-
-  function sendMessage() {
-    const message = chatInput.value.trim();
-    if (!message) return;
-    appendMessage(message, 'user');
-    chatInput.value = '';
-    botResponse(message);
-  }
-
-  function appendMessage(text, sender) {
-    const msgDiv = document.createElement('div');
-    msgDiv.className = 'chat-message ' + sender;
-    msgDiv.textContent = text;
-    chatLog.appendChild(msgDiv);
-    chatLog.scrollTop = chatLog.scrollHeight;
-  }
-
-  function botResponse(input) {
-    input = input.toLowerCase();
-    let response = "I'm here to listen. Tell me more!";
-    if (input.includes('hello') || input.includes('hi')) {
-      response = "Hey there! How are you feeling today?";
-    } else if (input.includes('sad')) {
-      response = "I'm sorry you're feeling sad. Remember, it's okay to feel this way sometimes.";
-    } else if (input.includes('happy')) {
-      response = "That's wonderful! Keep spreading those good vibes!";
-    } else if (input.includes('help')) {
-      response = "I'm here to support you. What's on your mind?";
-    } else if (input.includes('stress') || input.includes('anxious')) {
-      response = "Try taking a few deep breaths. You're stronger than your worries.";
-    }
-    setTimeout(() => appendMessage(response, 'bot'), 700);
-  }
-
-  // Navigation active link highlight
-  const navLinks = document.querySelectorAll('nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
-      document.getElementById(targetId).scrollIntoView({behavior: 'smooth'});
-      navLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
+  checkboxes.forEach(cb => {
+    const id = cb.id;
+    cb.checked = localStorage.getItem(id) === 'true';
+    cb.addEventListener('change', () => {
+      localStorage.setItem(id, cb.checked);
+      updateProgress();
     });
   });
-</script>
 
+  journal.value = localStorage.getItem("journal") || "";
+  journal.addEventListener("input", () => {
+    localStorage.setItem("journal", journal.value);
+  });
+
+  updateProgress();
+</script>
 </body>
 </html>
